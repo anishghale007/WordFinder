@@ -1,6 +1,6 @@
 # wordfinder
 
-A new Flutter project.
+A dictionary app wherer you can search the meaning of any word and get their types along with an  example. API used from owlbot.info
 
 ## Getting Started
 
