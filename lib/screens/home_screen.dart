@@ -46,6 +46,7 @@ class HomeScreen extends StatelessWidget {
                       icon: Icon(Icons.clear),
                       onPressed: () {
                         searchController.clear();
+                        ref.refresh(definitionProvider);
                       }),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -76,58 +77,60 @@ class HomeScreen extends StatelessWidget {
                             itemCount: words.length,
                             itemBuilder: (context, index) {
                               final dat = words[index];
-                              return Padding(
-                                padding: const EdgeInsets.only(
-                                    bottom: 15, left: 10, right: 10),
-                                child: Card(
-                                  color: Color(0xFF1D1E33),
-                                  shadowColor: Colors.black,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(15)),
-                                  child: Container(
-                                    padding: EdgeInsets.all(10),
-                                    margin: EdgeInsets.only(bottom: 18),
-                                    width: double.infinity,
-                                    height: 250,
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                          child: Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 10),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  searchController.text.trim(),
-                                                  style:
-                                                      TextStyle(fontSize: 40),
-                                                ),
-                                                Text(
-                                                  dat.type,
-                                                  style: TextStyle(
-                                                      fontStyle:
-                                                          FontStyle.italic,
-                                                      color: Colors.grey),
-                                                ),
-                                                SizedBox(height: 5),
-                                                Text(
-                                                  dat.definition,
-                                                  maxLines: 5,
-                                                  textAlign: TextAlign.justify,
-                                                ),
-                                                SizedBox(height: 10),
-                                                Text(
-                                                  '"' + dat.example + '"',
-                                                  style: TextStyle(
-                                                      color: Colors.grey),
-                                                ),
-                                              ],
+                              return Flexible(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      bottom: 15, left: 10, right: 10),
+                                  child: Card(
+                                    color: Color(0xFF1D1E33),
+                                    shadowColor: Colors.black,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(15),),
+                                    child: Container(
+                                      padding: EdgeInsets.all(10),
+                                      margin: EdgeInsets.only(bottom: 18),
+                                      width: double.infinity,
+                                      // height: 250,
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            child: Padding(
+                                              padding: const EdgeInsets.symmetric(
+                                                  horizontal: 10),
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    searchController.text.trim(),
+                                                    style:
+                                                        TextStyle(fontSize: 40),
+                                                  ),
+                                                  Text(
+                                                    dat.type,
+                                                    style: TextStyle(
+                                                        fontStyle:
+                                                            FontStyle.italic,
+                                                        color: Colors.grey),
+                                                  ),
+                                                  SizedBox(height: 5),
+                                                  Text(
+                                                    dat.definition,
+                                                    maxLines: 5,
+                                                    textAlign: TextAlign.justify,
+                                                  ),
+                                                  SizedBox(height: 10),
+                                                  Text(
+                                                    '"' + dat.example + '"',
+                                                    style: TextStyle(
+                                                        color: Colors.grey),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
