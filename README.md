@@ -8,5 +8,5 @@ Http : Dio </br>
 
 ## Screenshots
 
-<img src="https://user-images.githubusercontent.com/72159017/178107917-3447d228-f9b9-4d4f-b085-12dcbd9def12.png" width="800" height="650">
+<img src="https://user-images.githubusercontent.com/72159017/178107917-3447d228-f9b9-4d4f-b085-12dcbd9def12.png" width="1000" height="600">
 
